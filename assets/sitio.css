@@ -211,7 +211,7 @@ main, .pie { position: relative; z-index: 1; }
 .chip-vivo i { width: 7px; height: 7px; border-radius: 50%; background: var(--verde); box-shadow: 0 0 0 4px rgba(95, 220, 162, 0.16); }
 .chip-vivo b { font-weight: 650; }
 h1 {
-  font-size: clamp(54px, 8.6vw, 124px);
+  font-size: clamp(50px, 7.2vw, 104px);
   font-weight: 750;
   letter-spacing: -0.05em;
   line-height: 0.9;
