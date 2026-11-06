@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chonita · tu agente vive en el notch</title>
+  <meta name="description" content="Chonita vive en el notch de tu Mac o arriba de tu pantalla en Windows. Le hablas o le escribes y resuelve tu correo, tu agenda, tus apps y tus archivos con los planes de Claude, ChatGPT o Google que ya pagas.">
+  <meta name="theme-color" content="#0b0710">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chonita · tu agente vive en el notch">
+  <meta property="og:description" content="Le hablas o le escribes y resuelve. Con los planes de Claude, ChatGPT o Google que ya pagas. Para Mac y Windows, gratis.">
+  <meta property="og:image" content="https://anndreloopez012.github.io/chonita-descargas/assets/og.png">
+  <meta property="og:url" content="https://anndreloopez012.github.io/chonita-descargas/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icono-64.png">
+  <link rel="apple-touch-icon" href="assets/icono-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/mascota.css">
+  <link rel="stylesheet" href="assets/sitio.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div class="grano" aria-hidden="true"></div>
+
+  <!-- La isla: el menú tiene forma de notch y se abre como el de la app. -->
+  <header class="isla-nav" id="isla-nav">
+    <button class="isla-boton" type="button" aria-expanded="false" aria-controls="isla-menu">
+      <span class="isla-mascota" id="mascota-nav"></span>
+      <span class="isla-nombre">Chonita</span>
+      <span class="isla-punto" aria-hidden="true"></span>
+      <span class="sr">Abrir el menú</span>
+    </button>
+    <nav class="isla-menu" id="isla-menu" aria-label="Secciones">
+      <a href="#demo">Mírala</a>
+      <a href="#ias">Tus IA</a>
+      <a href="#hace">Qué hace</a>
+      <a href="#privacidad">Privacidad</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="isla-descargar" href="#descargar">Descargar</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- ============ portada ============ -->
+    <section class="portada">
+      <div class="portada-texto">
+        <p class="etiqueta entra" style="--d:0">
+          <span class="chip-vivo"><i></i> Versión <b data-version>1.0.4</b></span>
+          Para Mac y Windows · gratis
+        </p>
+        <h1 class="entra" style="--d:1">Tu agente vive <em>en el notch.</em></h1>
+        <p class="bajada entra" style="--d:2">
+          Le hablas o le escribes y Chonita resuelve: tu correo, tu agenda, tus apps y tus archivos.
+          Usa los planes de <b class="c-claude">Claude</b>, <b class="c-codex">ChatGPT</b> o <b class="c-agy">Google</b> que ya pagas, sin llaves de API.
+        </p>
+        <div class="acciones entra" style="--d:3">
+          <a class="boton boton-principal" id="descarga-principal" href="https://github.com/anndreloopez012/chonita-descargas/releases/download/v1.0.4/Chonita-1.0.4-arm64.dmg" data-descarga="mac-arm64">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A1.5 1.5 0 0 1 5.5 5h13A1.5 1.5 0 0 1 20 6.5V16H4z"/><path d="M10 5h4v1.2a.8.8 0 0 1-.8.8h-2.4a.8.8 0 0 1-.8-.8z" class="relleno"/><path d="M2 17h20l-1 2H3z"/></svg>
+            <span><b id="principal-titulo">Descargar para Mac</b><small id="principal-detalle">chip de Apple · <span data-tam="mac-arm64">124 MB</span></small></span>
+          </a>
+          <a class="boton boton-secundario" id="descarga-secundaria" href="https://github.com/anndreloopez012/chonita-descargas/releases/download/v1.0.4/Chonita-1.0.4-x64.exe" data-descarga="win">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM12 4.2 21 3v8.5h-9zM3 13h7.5v7.1L3 19zM12 13h9v8l-9-1.2z" class="relleno"/></svg>
+            <span><b id="secundaria-titulo">Para Windows</b><small id="secundaria-detalle">10 y 11 · <span data-tam="win">114 MB</span></small></span>
+          </a>
+        </div>
+        <p class="nota entra" style="--d:4">¿Mac con Intel? <a href="#descargar">Aquí está su versión</a>. Desde macOS 13.</p>
+      </div>
+
+      <div class="escenario entra" style="--d:2" aria-hidden="true">
+        <div class="halo"></div>
+        <div class="orbita">
+          <span class="luna l-claude"></span>
+          <span class="luna l-codex"></span>
+          <span class="luna l-agy"></span>
+        </div>
+        <div class="mascota-portada" id="mascota-portada" title="Hazle clic"></div>
+        <p class="pista">hazle clic</p>
+      </div>
+
+      <a class="bajar" href="#demo" aria-label="Ver cómo trabaja">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ demo ============ -->
+    <section class="seccion demo" id="demo">
+      <div class="encabezado revelar">
+        <p class="sobre">Mírala trabajar</p>
+        <h2>Pasas el mouse por el notch <em>y ahí está.</em></h2>
+        <p>Cerrada te muestra a Chonita y lo que está haciendo. Abierta, conversa contigo. También abre con <kbd>Alt</kbd><kbd>Shift</kbd><kbd>Espacio</kbd> o diciendo «Chonita…».</p>
+      </div>
+
+      <div class="pantalla revelar" id="pantalla" aria-label="Demostración animada de Chonita en el notch" role="img">
+        <div class="pantalla-fondo"></div>
+        <div class="barra-menu"><span class="bm-izq"><i></i><b>Finder</b> Archivo Edición Ver</span><span class="bm-der" id="demo-hora">9:41</span></div>
+        <div class="demo-isla" id="demo-isla">
+          <div class="di-cerrada">
+            <span class="di-mascota" id="demo-mini"></span>
+            <span class="di-estado" id="demo-estado">Lista</span>
+          </div>
+          <div class="di-panel">
+            <div class="di-cabeza">
+              <span class="di-mascota-grande" id="demo-grande"></span>
+              <div class="di-burbuja"><strong id="demo-titulo">¿En qué te ayudo?</strong><span id="demo-sub">Claude, ChatGPT y Google conectados</span></div>
+            </div>
+            <div class="di-chat" id="demo-chat"></div>
+            <div class="di-entrada"><span id="demo-escribe"></span><i class="di-cursor"></i><span class="di-enviar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></div>
+          </div>
+        </div>
+        <div class="dock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="demo-pasos" role="tablist" aria-label="Ejemplos">
+        <button role="tab" data-escena="0" aria-selected="true"><span>Tu día</span><i></i></button>
+        <button role="tab" data-escena="1" aria-selected="false"><span>Correo</span><i></i></button>
+        <button role="tab" data-escena="2" aria-selected="false"><span>Temporizador</span><i></i></button>
+        <button role="tab" data-escena="3" aria-selected="false"><span>Las tres IA</span><i></i></button>
+      </div>
+    </section>
+
+    <!-- ============ las tres IA ============ -->
+    <section class="seccion ias" id="ias">
+      <div class="encabezado revelar">
+        <p class="sobre">Tus planes, no los nuestros</p>
+        <h2>Tres IA. <em>Una sola Chonita.</em></h2>
+        <p>Chonita no tiene un plan propio que pagar: trabaja con los programas oficiales de cada IA y la cuenta que ya tienes. Los instala y los conecta desde Ajustes.</p>
+      </div>
+
+      <div class="tres revelar">
+        <article class="ia" style="--c: var(--claude)">
+          <span class="ia-marca">C</span>
+          <h3>Claude</h3>
+          <p class="ia-por">con Claude Code</p>
+          <p>Ideal para pensar, escribir y trabajar con tus archivos, skills y agentes.</p>
+        </article>
+        <article class="ia" style="--c: var(--codex)">
+          <span class="ia-marca">G</span>
+          <h3>ChatGPT</h3>
+          <p class="ia-por">con Codex</p>
+          <p>Otra cabeza para el código, los datos y lo que necesite una segunda opinión.</p>
+        </article>
+        <article class="ia" style="--c: var(--agy)">
+          <span class="ia-marca">A</span>
+          <h3>Google</h3>
+          <p class="ia-por">con Antigravity</p>
+          <p>Gemini a tu lado, con tu plan de Google AI.</p>
+        </article>
+      </div>
+
+      <div class="relevo revelar">
+        <div class="relevo-texto">
+          <h3>Si una se queda sin cupo, sigue la otra.</h3>
+          <p>Chonita elige la que tenga plan disponible. Si una llega al límite o se le vence la sesión, continúa con la siguiente sin que pierdas el hilo. Y si quieres, elige tú: «pregúntale a Codex…», «con Gemini…» o «pregunta a las tres» para comparar.</p>
+        </div>
+        <div class="consumo" aria-label="Ejemplo de la pestaña Consumo">
+          <p class="consumo-titulo">Consumo <span>ejemplo</span></p>
+          <div class="medidor" style="--c: var(--claude); --v: .72"><span>Claude</span><i><b></b></i><em>queda 72 %</em></div>
+          <div class="medidor" style="--c: var(--codex); --v: .38"><span>ChatGPT</span><i><b></b></i><em>queda 38 %</em></div>
+          <div class="medidor" style="--c: var(--agy); --v: .91"><span>Google</span><i><b></b></i><em>queda 91 %</em></div>
+          <p class="consumo-pie">Cifras reales de cada plan, no estimaciones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ qué hace ============ -->
+    <section class="seccion hace" id="hace">
+      <div class="encabezado revelar">
+        <p class="sobre">Qué hace</p>
+        <h2>Todo lo de tu día, <em>a un notch de distancia.</em></h2>
+      </div>
+
+      <div class="bento">
+        <article class="caja c3 revelar">
+          <h3>Siempre a mano</h3>
+          <p>Pasa el mouse por el notch o pulsa el atajo. En Windows vive en una píldora arriba al centro.</p>
+          <div class="teclas" aria-hidden="true"><kbd>Alt</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd class="larga">Espacio</kbd></div>
+        </article>
+        <article class="caja c3 revelar destacada">
+          <h3>Al instante y sin gastar plan</h3>
+          <p>Lo simple se resuelve sin preguntarle a ninguna IA.</p>
+          <ul class="chips"><li>la hora</li><li>tu agenda de hoy</li><li>abrir y cerrar apps</li><li>volumen</li><li>modo oscuro</li><li>música</li><li>temporizadores</li><li>pomodoro</li></ul>
+        </article>
+        <article class="caja c2 revelar">
+          <svg class="ico-caja" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <h3>Controla tu equipo</h3>
+          <p>Apps, archivos, comandos, botones y menús de cualquier app, ventanas lado a lado y la página del navegador.</p>
+        </article>
+        <article class="caja c2 revelar">
+          <svg class="ico-caja" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <h3>Correo</h3>
+          <p>Todas tus cuentas, sin pedir contraseñas: Importante, Por responder y Para leer. Resume y responde en el hilo.</p>
+        </article>
+        <article class="caja c2 revelar">
+          <svg class="ico-caja" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 7.5a3 3 0 0 1 0 5.6M18 19a5 5 0 0 0-2.5-4.4"/></svg>
+          <h3>Reuniones</h3>
+          <p>Acepta invitaciones, graba tu voz y la de la llamada, y al terminar: resumen, nota, tareas y correo a los asistentes.</p>
+        </article>
+        <article class="caja c2 revelar">
+          <svg class="ico-caja" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+          <h3>Calendario y recordatorios</h3>
+          <p>Tu agenda, eventos nuevos y recordatorios que llegan a tu iPhone.</p>
+        </article>
+        <article class="caja c2 revelar">
+          <svg class="ico-caja" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h5"/></svg>
+          <h3>Notas</h3>
+          <p>Apple Notes, tus bóvedas de Obsidian y Notas rápidas de Windows.</p>
+        </article>
+        <article class="caja c2 revelar voz">
+          <div class="ondas-voz" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <h3>Voz</h3>
+          <p>Manos libres con «Chonita…». Te entiende en tu equipo: el audio no se guarda ni sale.</p>
+        </article>
+        <article class="caja c3 revelar">
+          <h3>Hoy y rutinas</h3>
+          <p>Resumen de la mañana, cierre del día y rutinas tuyas.</p>
+          <p class="cita">«Los lunes a las 8, revisa mis pendientes y dime por dónde empezar.»</p>
+        </article>
+        <article class="caja c3 revelar">
+          <h3>Consumo e historial</h3>
+          <p>Cuánto plan te queda en cada IA, cuánto usas cada una, y todo lo que pediste y lo que Chonita hizo.</p>
+        </article>
+        <article class="caja c6 revelar extras">
+          <h3>Y los detalles</h3>
+          <ul class="chips"><li>¿Qué hay en mi pantalla?</li><li>Acciones sobre el texto seleccionado</li><li>Historial del portapapeles</li><li>Suelta archivos en el notch</li><li>Música de cualquier navegador</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ pedidos ============ -->
+    <section class="pedidos" aria-label="Ejemplos de lo que le puedes pedir">
+      <p class="sobre centro revelar">Qué le puedes pedir</p>
+      <div class="cinta"><div class="cinta-pista">
+        <span>¿Qué tengo hoy?</span><span>Planea mi día con bloques de tiempo</span><span>Pasa la reunión de las 4 a mañana</span><span>Resume mis correos sin leer</span><span>Recuérdame el viernes a las 10 pagar la luz</span><span>Busca en mis notas lo de la licitación</span><span>Abre Spotify y pon música</span>
+        <span aria-hidden="true">¿Qué tengo hoy?</span><span aria-hidden="true">Planea mi día con bloques de tiempo</span><span aria-hidden="true">Pasa la reunión de las 4 a mañana</span><span aria-hidden="true">Resume mis correos sin leer</span><span aria-hidden="true">Recuérdame el viernes a las 10 pagar la luz</span><span aria-hidden="true">Busca en mis notas lo de la licitación</span><span aria-hidden="true">Abre Spotify y pon música</span>
+      </div></div>
+      <div class="cinta inversa"><div class="cinta-pista">
+        <span>Pon un temporizador de 25 minutos</span><span>Busca el PDF del contrato que bajé ayer y resúmelo</span><span>Con el agente de contabilidad revisa este Excel</span><span>Pregunta a las tres cómo explicar qué es un agente</span><span>¿Cuánto me queda de Claude esta semana?</span><span>Prepara una respuesta para Luis diciendo que sí</span>
+        <span aria-hidden="true">Pon un temporizador de 25 minutos</span><span aria-hidden="true">Busca el PDF del contrato que bajé ayer y resúmelo</span><span aria-hidden="true">Con el agente de contabilidad revisa este Excel</span><span aria-hidden="true">Pregunta a las tres cómo explicar qué es un agente</span><span aria-hidden="true">¿Cuánto me queda de Claude esta semana?</span><span aria-hidden="true">Prepara una respuesta para Luis diciendo que sí</span>
+      </div></div>
+    </section>
+
+    <!-- ============ poderes ============ -->
+    <section class="seccion poderes" id="poderes">
+      <div class="encabezado revelar">
+        <p class="sobre">Dentro de tus apps</p>
+        <h2>Sabe qué tienes abierto. <em>«Esto» es esto.</em></h2>
+        <p>Chonita sabe qué app tienes al frente y qué documento, proyecto o chat está abierto. Así, «esto», «aquí» y «el documento» se aplican a lo que estás usando.</p>
+      </div>
+      <ol class="lista-poderes">
+        <li class="revelar"><b>Base</b><span>Cualquier app</span><q>Mejora lo que seleccioné</q></li>
+        <li class="revelar"><b>Oficina</b><span>Word · Excel · PowerPoint</span><q>Arma 5 diapositivas sobre agentes</q></li>
+        <li class="revelar"><b>Código</b><span>VS Code · Ghostty · Terminal · Warp</span><q>Corre los tests en la terminal</q></li>
+        <li class="revelar"><b>Desarrollo</b><span>Git · GitHub · Docker · Postman · Xcode</span><q>Haz commit y sincroniza con dev y main</q></li>
+        <li class="revelar"><b>Comunicación</b><span>WhatsApp · Discord</span><q>Escríbele a Ana que ya voy</q></li>
+        <li class="revelar"><b>Docencia y contenido</b><span>Clases · Screen Studio · draw.io · Obsidian</span><q>Pasa este video a GIF</q></li>
+        <li class="revelar"><b>Red y equipo</b><span>VPN · AnyDesk · brillo · No molestar</span><q>¿Por qué no abre GitHub?</q></li>
+      </ol>
+    </section>
+
+    <!-- ============ privacidad ============ -->
+    <section class="seccion privacidad" id="privacidad">
+      <div class="priv-grid">
+        <div class="encabezado izq revelar">
+          <p class="sobre">Privacidad y cuidado</p>
+          <h2>Tu equipo, <em>tus reglas.</em></h2>
+          <p>Chonita puede mucho, así que pregunta antes de lo que tiene consecuencias. Respondes con un botón o diciendo «sí».</p>
+          <div class="confirma" aria-hidden="true">
+            <span class="confirma-mascota" id="mascota-confirma"></span>
+            <div>
+              <p>¿Le envío a Ana «Ya voy, llego en 10»?</p>
+              <div class="confirma-botones"><span>No</span><span class="si">Enviar</span></div>
+            </div>
+          </div>
+        </div>
+        <ul class="garantias">
+          <li class="revelar"><b>Lo delicado se confirma.</b> Enviar mensajes, borrar, sobrescribir, hacer push o correr comandos que modifican: siempre pregunta antes.</li>
+          <li class="revelar"><b>Tu voz se queda contigo.</b> La entiende en tu propio equipo. El audio no se guarda ni se envía a ningún lado.</li>
+          <li class="revelar"><b>Nunca escribe contraseñas.</b> Ni las pide. El correo entra por las apps que ya usas.</li>
+          <li class="revelar"><b>Lo tuyo se queda en tu equipo.</b> Tus ajustes y tu historial viven ahí. Solo sale lo que tú le mandas a tus IA.</li>
+          <li class="revelar"><b>Páginas web con permiso.</b> Antes de que una IA abra una página, Chonita te muestra la dirección y pregunta.</li>
+          <li class="revelar"><b>Lo personal, aparte.</b> Tu bóveda personal de notas queda fuera hasta que tú la habilites.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ descargar ============ -->
+    <section class="seccion descargar" id="descargar">
+      <div class="encabezado revelar">
+        <p class="sobre">Descargar</p>
+        <h2>Llévatela. <em>Es gratis.</em></h2>
+        <p>Versión <b data-version>1.0.4</b><span data-fecha></span>. Elige tu equipo.</p>
+      </div>
+
+      <div class="plataformas">
+        <article class="plataforma revelar" data-plataforma="mac-arm64">
+          <span class="recomendada">Para tu equipo</span>
+          <svg class="ico-plat" viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="9" width="34" height="22" rx="3"/><path d="M20 9h8v2.2a1.4 1.4 0 0 1-1.4 1.4h-5.2A1.4 1.4 0 0 1 20 11.2z" class="relleno"/><path d="M3 34h42l-2 4H5z"/></svg>
+          <h3>Mac con chip de Apple</h3>
+          <p>M1 en adelante · macOS 13 o más nuevo</p>
+          <a class="boton boton-principal ancho" data-descarga="mac-arm64" href="https://github.com/anndreloopez012/chonita-descargas/releases/download/v1.0.4/Chonita-1.0.4-arm64.dmg">Descargar .dmg <small data-tam="mac-arm64">124 MB</small></a>
+        </article>
+        <article class="plataforma revelar" data-plataforma="mac-x64">
+          <span class="recomendada">Para tu equipo</span>
+          <svg class="ico-plat" viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="9" width="34" height="22" rx="3"/><path d="M3 34h42l-2 4H5z"/><rect x="18" y="14" width="12" height="12" rx="1.5"/><path d="M21 14v-2M27 14v-2M21 28v-2M27 28v-2M18 17h-2M18 23h-2M32 17h-2M32 23h-2"/></svg>
+          <h3>Mac con Intel</h3>
+          <p>Procesador Intel · macOS 13 o más nuevo</p>
+          <a class="boton boton-principal ancho" data-descarga="mac-x64" href="https://github.com/anndreloopez012/chonita-descargas/releases/download/v1.0.4/Chonita-1.0.4-x64.dmg">Descargar .dmg <small data-tam="mac-x64">131 MB</small></a>
+        </article>
+        <article class="plataforma revelar" data-plataforma="win">
+          <span class="recomendada">Para tu equipo</span>
+          <svg class="ico-plat" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="26" rx="3"/><path d="M17 40h14M24 34v6"/><path d="M15 15.5l7.5-1v6.5H15zM24 14.3l9-1.2v7.9h-9zM15 23h7.5v6.5L15 28.5zM24 23h9v8l-9-1.2z" class="relleno"/></svg>
+          <h3>Windows</h3>
+          <p>Windows 10 y 11 · 64 bits</p>
+          <a class="boton boton-principal ancho" data-descarga="win" href="https://github.com/anndreloopez012/chonita-descargas/releases/download/v1.0.4/Chonita-1.0.4-x64.exe">Descargar .exe <small data-tam="win">114 MB</small></a>
+        </article>
+      </div>
+
+      <p class="chip-mac revelar"><b>¿Qué chip tiene mi Mac?</b> Menú Apple → Acerca de esta Mac. Si dice «Chip Apple M…», es chip de Apple; si dice «Procesador Intel», es Intel.</p>
+
+      <div class="instalar">
+        <article class="paso-a-paso revelar">
+          <h3>Instalar en Mac</h3>
+          <ol>
+            <li>Abre el <code>.dmg</code> y arrastra Chonita a Aplicaciones.</li>
+            <li>La primera vez, macOS dice que no puede verificarla: todavía no lleva el sello de Apple. Pulsa «Listo».</li>
+            <li>Ve a Ajustes del Sistema → Privacidad y seguridad. Abajo aparece «Se bloqueó Chonita»: pulsa «Abrir igualmente».</li>
+            <li>Chonita te guía para dar los permisos y conectar tus IA.</li>
+          </ol>
+        </article>
+        <article class="paso-a-paso revelar">
+          <h3>Instalar en Windows</h3>
+          <ol>
+            <li>Abre el <code>.exe</code>.</li>
+            <li>Si aparece «Windows protegió tu PC», pulsa «Más información» → «Ejecutar de todas formas». Sale porque el instalador todavía no va firmado.</li>
+            <li>Elige la carpeta y termina. Chonita queda en el menú Inicio.</li>
+            <li>Ábrela y conecta tus IA desde Ajustes.</li>
+          </ol>
+        </article>
+      </div>
+
+      <article class="novedades revelar" id="novedades" hidden>
+        <h3>Novedades de la <span data-version>1.0.4</span></h3>
+        <ul id="novedades-lista"></ul>
+        <a href="https://github.com/anndreloopez012/chonita-descargas/releases">Todas las versiones →</a>
+      </article>
+    </section>
+
+    <!-- ============ preguntas ============ -->
+    <section class="seccion preguntas" id="preguntas">
+      <div class="encabezado revelar">
+        <p class="sobre">Preguntas</p>
+        <h2>Lo que <em>todos preguntan.</em></h2>
+      </div>
+      <div class="acordeon">
+        <details class="revelar">
+          <summary>¿Cuesta algo?</summary>
+          <p>Chonita es gratis. Lo que le pide a una IA se descuenta de tu plan de Claude, ChatGPT o Google, como si lo usaras directo. Lo simple (la hora, tu agenda, el volumen, temporizadores) no gasta plan.</p>
+        </details>
+        <details class="revelar">
+          <summary>¿Qué necesito para usarla?</summary>
+          <p>Un Mac con macOS 13 o más nuevo, o una PC con Windows 10 u 11 de 64 bits. Y al menos una cuenta de Claude, ChatGPT o Google con su plan. Chonita instala el programa oficial de cada una y te ayuda a conectarlo desde Ajustes.</p>
+        </details>
+        <details class="revelar">
+          <summary>¿Por qué mi Mac dice que no puede verificarla?</summary>
+          <p>Porque todavía no lleva el sello de Apple (Developer ID). La app es la misma; solo hay que permitirla una vez en Ajustes del Sistema → Privacidad y seguridad → «Abrir igualmente». En Windows pasa lo mismo con SmartScreen.</p>
+        </details>
+        <details class="revelar">
+          <summary>¿Se actualiza sola?</summary>
+          <p>Te avisa. Al abrirse y cada 6 horas revisa si hay una versión nueva y te muestra un botón para descargarla. No instala nada sin que tú lo decidas.</p>
+        </details>
+        <details class="revelar">
+          <summary>¿Funciona igual en Windows?</summary>
+          <p>Casi todo. En lugar del notch vive en una píldora arriba al centro, el correo va por Outlook y las notas por Notas rápidas de Windows. Lo que es propio de macOS, como Apple Notes o los Atajos, no está.</p>
+        </details>
+        <details class="revelar">
+          <summary>¿Qué pasa con mis datos?</summary>
+          <p>Viven en tu equipo: tus ajustes, tu historial y lo que Chonita aprende de cómo hablarte. Solo sale lo que tú le mandas a tu IA, por el programa oficial de esa IA. La voz se procesa en tu equipo y el audio no se guarda.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie-mascota" id="mascota-pie" aria-hidden="true"></div>
+    <p class="pie-marca">Chonita</p>
+    <p class="pie-texto">Tu agente de escritorio. Hecha con cariño por Andre Lopez.</p>
+    <nav class="pie-enlaces" aria-label="Enlaces">
+      <a href="#descargar">Descargar</a>
+      <a href="https://github.com/anndreloopez012/chonita-descargas/releases">Versiones</a>
+      <a href="https://github.com/anndreloopez012/chonita-descargas">Repositorio</a>
+    </nav>
+  </footer>
+
+  <script src="assets/mascota.js"></script>
+  <script src="assets/sitio.js"></script>
+</body>
+</html>

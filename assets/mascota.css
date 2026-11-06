@@ -1,0 +1,125 @@
+/* La mascota de Chonita, igual que en la app (src/renderer/estilos.css de app-chonita-agents). */
+:root { --cuerpo: #ffbe96; --cuerpo-luz: #ffe2cc; --cuerpo-sombra: #f29a70; --mono: #ff4f86; --mono-luz: #ff9cbc; --mejilla: #ff8fa3; --ojo: #2a1b21; --acento: #ff6f91; --ok: #5fdca2; --info: #7cb8ff; --aviso: #ffc861; --texto-suave: #b2adbb; --resorte: cubic-bezier(0.34, 1.56, 0.64, 1); --suave: cubic-bezier(0.32, 0.72, 0, 1); --fuente-titulo: 'Bricolage Grotesque', system-ui, sans-serif; }
+/* ================= partículas ================= */
+.particula { position: fixed; z-index: 50; pointer-events: none; will-change: transform, opacity; }
+.particula.confeti { width: 7px; height: 4px; border-radius: 1px; background: var(--color); }
+.particula.corazon { color: var(--acento); font-size: 15px; line-height: 1; text-shadow: 0 0 8px var(--acento); }
+
+/* ================= mascota ================= */
+.mascota { display: inline-block; position: relative; }
+.mascota svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.tam-avatar { width: 30px; height: 30px; }
+.mascota .sombra { fill: rgba(0, 0, 0, 0.45); transform-box: fill-box; transform-origin: center; animation: sombra 3.6s ease-in-out infinite; }
+.mascota .brillo { fill: rgba(255, 255, 255, 0.45); }
+.mascota .nudo { fill: var(--mono); }
+.mascota .brazo ellipse { fill: var(--cuerpo-sombra); }
+.mascota .brazo { transform-box: fill-box; transform-origin: 50% 12%; }
+.mascota .brazo.izq { transform: rotate(14deg); }
+.mascota .brazo.der { transform: rotate(-14deg); }
+.mascota .iris { fill: var(--ojo); }
+.mascota .luz { fill: #fff; }
+.mascota .luz2 { fill: rgba(255, 255, 255, 0.7); }
+.mascota .mejilla { fill: var(--mejilla); opacity: var(--mejilla-op, 0.55); transform-box: fill-box; transform-origin: center; transform: scale(var(--mejilla-escala, 1)); transition: opacity 0.4s, transform 0.45s var(--resorte); }
+.mascota .iris { transform-box: fill-box; transform-origin: center; transform: scale(var(--ojos-escala, 1)); transition: transform 0.45s var(--resorte); }
+body.sin-mono .mascota .mono { display: none; }
+.mascota .boca, .mascota .ojos-felices path, .mascota .ojos-dormidos path, .mascota .ceja {
+  fill: none; stroke: var(--ojo); stroke-width: 2.6; stroke-linecap: round;
+}
+.mascota .boca.abierta { fill: #7a2236; stroke: var(--ojo); stroke-width: 1.6; }
+.mascota .gota { fill: #8fd0ff; opacity: 0.9; }
+.mascota .ondas path { fill: none; stroke: var(--acento); stroke-width: 2.6; stroke-linecap: round; }
+.mascota .ondas { transform-box: view-box; transform-origin: 50% 54%; }
+.mascota .puntos circle { fill: var(--info); }
+.mascota .chispas path { fill: var(--aviso); }
+.mascota .zetas text { fill: var(--texto-suave); font: 800 10px var(--fuente-titulo); }
+.mascota .ojos-felices, .mascota .ojos-dormidos, .mascota .cejas, .mascota .boca.triste, .mascota .boca.abierta, .mascota .gota,
+.mascota .ondas, .mascota .puntos, .mascota .chispas, .mascota .zetas { display: none; }
+.mascota .todo { transform-box: view-box; transform-origin: 50% 88%; animation: respirar 3.6s ease-in-out infinite; }
+.mascota .mono { transform-box: view-box; transform-origin: 50% 24%; animation: mono-suave 5s ease-in-out infinite; }
+.mascota.tam-mini .sombra { display: none; }
+/* En el notch y tranquila, solo parpadea y mira: así la isla no se redibuja todo el tiempo. */
+.mascota.tam-mini.reposo:not(.g-rebote):not(.g-saludar):not(.g-risa):not(.g-estirarse) .todo,
+.mascota.tam-mini.reposo:not(.g-moverMono) .mono,
+.mascota.tam-mini:is(.dormida, .privado) .todo { animation: none; }
+
+/* estados */
+.mascota.escuchando .ondas { display: inline; transition: opacity 0.1s, transform 0.1s; }
+.mascota.escuchando .todo { animation: none; }
+.mascota.escuchando .cejas { display: inline; transform: translateY(-2px); }
+.mascota.escuchando .brazo.der { transform: rotate(-60deg); }
+.mascota.pensando .puntos { display: inline; }
+.mascota.pensando .puntos circle { animation: subir 1.2s ease-in-out infinite; }
+.mascota.pensando .puntos circle:nth-child(2) { animation-delay: 0.18s; }
+.mascota.pensando .puntos circle:nth-child(3) { animation-delay: 0.36s; }
+.mascota.pensando .todo { animation: ladear 2.6s ease-in-out infinite; }
+.mascota.pensando .brazo.der { transform: rotate(-150deg) translate(2px, -2px); transition: transform 0.4s var(--resorte); }
+.mascota.pensando .boca.sonrisa { transform: scaleX(0.6); transform-box: fill-box; transform-origin: center; }
+.mascota.trabajando .chispas { display: inline; transform-box: view-box; transform-origin: 50% 50%; animation: girar 2.2s linear infinite; }
+.mascota.trabajando .todo { animation: rebotar 0.55s ease-in-out infinite; }
+.mascota.trabajando .mono { animation: mono-baila 0.45s ease-in-out infinite; }
+.mascota.trabajando .brazo.izq { animation: brazo-trabaja 0.55s ease-in-out infinite; }
+.mascota.trabajando .brazo.der { animation: brazo-trabaja 0.55s 0.27s ease-in-out infinite; }
+.mascota.hablando .boca.sonrisa { display: none; }
+.mascota.hablando .boca.abierta { display: inline; }
+.mascota.hablando .todo { animation: respirar 1.2s ease-in-out infinite; }
+.mascota.listo .ojo { display: none; }
+.mascota.listo .ojos-felices { display: inline; }
+.mascota.listo .mejilla { opacity: min(1, calc(var(--mejilla-op, 0.55) + 0.4)); }
+.mascota.listo .chispas { display: inline; animation: latir 1s ease-in-out infinite; }
+.mascota.error .cejas { display: inline; }
+.mascota.error .ceja.izq { transform: rotate(16deg); transform-box: fill-box; transform-origin: center; }
+.mascota.error .ceja.der { transform: rotate(-16deg); transform-box: fill-box; transform-origin: center; }
+.mascota.error .boca.sonrisa { display: none; }
+.mascota.error .boca.triste { display: inline; }
+.mascota.error .gota { display: inline; animation: gota 1.6s ease-in infinite; }
+.mascota:is(.privado, .dormida) .ojo { display: none; }
+.mascota:is(.privado, .dormida) .ojos-dormidos { display: inline; }
+.mascota:is(.privado, .dormida) .zetas { display: inline; }
+.mascota:is(.privado, .dormida) .zetas text { animation: zeta 2.8s ease-in-out infinite; }
+.mascota:is(.privado, .dormida) .zetas text:nth-child(2) { animation-delay: 0.6s; }
+.mascota:is(.privado, .dormida) .zetas text:nth-child(3) { animation-delay: 1.2s; }
+.mascota:is(.privado, .dormida) .todo { animation: respirar 5.5s ease-in-out infinite; }
+.mascota:is(.privado, .dormida) .brazo { transform: rotate(0); }
+
+/* gestos */
+.mascota.g-saludar .brazo.der { animation: saludar 1.4s var(--suave); }
+.mascota.g-saludar .todo { animation: ladear-corto 1.4s ease-in-out; }
+.mascota.g-festejar .todo { animation: festejar 1.2s var(--resorte); }
+.mascota.g-festejar .brazo.izq { animation: brazo-arriba-izq 1.2s var(--resorte); }
+.mascota.g-festejar .brazo.der { animation: brazo-arriba-der 1.2s var(--resorte); }
+.mascota.g-temblar .todo { animation: temblar 0.5s ease-in-out; }
+.mascota.g-rebote .todo { animation: rebote 0.65s var(--resorte); }
+.mascota.g-moverMono .mono { animation: mono-baila 0.3s ease-in-out 3; }
+.mascota.g-estirarse .todo { animation: estirarse 1.3s var(--suave); }
+.mascota.g-estirarse .brazo.izq { animation: brazo-arriba-izq 1.3s var(--suave); }
+.mascota.g-estirarse .brazo.der { animation: brazo-arriba-der 1.3s var(--suave); }
+.mascota.g-risa .todo { animation: risa 1.1s ease-in-out; }
+.mascota.g-risa .mejilla { opacity: 1; }
+.mascota.g-risa .ojo { display: none; }
+.mascota.g-risa .ojos-felices { display: inline; }
+.mascota.g-sorpresa .todo { animation: sorpresa 0.55s var(--resorte); }
+
+@keyframes respirar { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.03, 0.97); } }
+@keyframes sombra { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes mono-suave { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(3deg); } }
+@keyframes mono-baila { 0%, 100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg); } }
+@keyframes subir { 0%, 100% { transform: translateY(0); opacity: 0.35; } 50% { transform: translateY(-4px); opacity: 1; } }
+@keyframes ladear { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(-2deg) translateY(-1px); } }
+@keyframes ladear-corto { 30%, 70% { transform: rotate(-6deg); } }
+@keyframes rebotar { 0%, 100% { transform: translateY(0) scale(1, 1); } 50% { transform: translateY(-3px) scale(0.98, 1.02); } }
+@keyframes brazo-trabaja { 0%, 100% { transform: rotate(10deg); } 50% { transform: rotate(-35deg); } }
+@keyframes saludar { 0% { transform: rotate(-14deg); } 15% { transform: rotate(-150deg); } 30% { transform: rotate(-115deg); } 45% { transform: rotate(-150deg); } 60% { transform: rotate(-115deg); } 75% { transform: rotate(-150deg); } 100% { transform: rotate(-14deg); } }
+@keyframes brazo-arriba-izq { 20%, 70% { transform: rotate(150deg); } }
+@keyframes brazo-arriba-der { 20%, 70% { transform: rotate(-150deg); } }
+@keyframes festejar { 0% { transform: translateY(0) scale(1); } 15% { transform: translateY(2px) scale(1.08, 0.9); } 40% { transform: translateY(-14px) scale(0.95, 1.06); } 65% { transform: translateY(0) scale(1.05, 0.95); } 80% { transform: translateY(-4px); } 100% { transform: translateY(0) scale(1); } }
+@keyframes temblar { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-3px) rotate(-3deg); } 40% { transform: translateX(3px) rotate(3deg); } 60% { transform: translateX(-2px); } 80% { transform: translateX(2px); } }
+@keyframes rebote { 0% { transform: scale(1, 1); } 30% { transform: scale(1.1, 0.9); } 55% { transform: scale(0.94, 1.08) translateY(-4px); } 100% { transform: scale(1, 1); } }
+@keyframes estirarse { 0% { transform: scale(1, 1); } 40% { transform: scale(0.92, 1.12); } 70% { transform: scale(1.05, 0.96); } 100% { transform: scale(1, 1); } }
+@keyframes risa { 0%, 100% { transform: rotate(0) scale(1); } 15% { transform: rotate(-7deg) scale(1.06, 0.95); } 30% { transform: rotate(6deg) scale(0.97, 1.04); } 45% { transform: rotate(-5deg) scale(1.05, 0.96); } 60% { transform: rotate(4deg); } 80% { transform: rotate(-2deg); } }
+@keyframes sorpresa { 0% { transform: scale(1); } 40% { transform: scale(1.12) translateY(-3px); } 100% { transform: scale(1); } }
+@keyframes gota { 0% { transform: translateY(-2px); opacity: 0; } 30% { opacity: 0.9; } 100% { transform: translateY(8px); opacity: 0; } }
+@keyframes zeta { 0% { opacity: 0; transform: translate(0, 4px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translate(4px, -6px); } }
+.mascota .pelo-atras > *, .mascota .pelo-frente > path:not(.mechon):not(.luz-pelo), .mascota .pelo-frente > circle:not(.liga) { fill: var(--pelo, #2a2230); }
+.mascota .pelo-frente .mechon { fill: #fbf7f2; }
+.mascota .pelo-frente .luz-pelo { fill: none; stroke: var(--pelo-luz, #5a4a66); stroke-width: 2.2; stroke-linecap: round; opacity: 0.55; }
+.mascota .pelo-frente .liga { fill: var(--mono); }
